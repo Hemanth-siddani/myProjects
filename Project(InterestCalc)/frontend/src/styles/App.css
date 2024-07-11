@@ -1,0 +1,9 @@
+@font-face {
+    font-family:Orbitron;
+    src: url('../public/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+}
+.logoTitle {
+    font-family:Orbitron;
+    font-style:italic;
+    font-weight:900;
+}
