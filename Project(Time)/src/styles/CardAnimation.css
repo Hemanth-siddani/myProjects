@@ -1,0 +1,87 @@
+@font-face {
+    font-family:Orbitron;
+    src: url('../../public/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+}
+body {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.rotate-frame-container {
+    width: 430px;
+    height: 430px;
+    position: relative; 
+}
+@keyframes rotate { 
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform:rotate(360deg);
+    }
+}
+.rotate-frame {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: rotate 10s linear infinite;
+}
+.time-content-container {
+    width: 50%;
+    position: absolute;
+    top: calc(50% - 50px);
+    left:calc(50% - 110px);
+    z-index: 1;
+    display: flex;
+    flex-direction:column;
+
+}
+.time-content {
+  display: inline;
+  font-family:Orbitron;
+  color:#fff;
+  font-size: larger;
+  text-align: center;
+  text-shadow:0px 5px 15px rgba(0,0,0,.90);
+
+}
+.meridiem_indicators  {
+    display: inline;
+    text-align:center;
+    margin:30px;
+    font-family:Orbitron;
+    text-shadow:0px 5px 20px rgba(9, 243, 243,.90);
+    font-size:30px;
+    color:rgb(9, 243, 243);
+}
+
+
+
+
+/* 
+@media screen and (max-width:800px){
+    body {
+        height:100vh;
+        width:100%;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        overflow:hidden;
+    }
+    .rotate-frame {
+        height:450px;
+        width:450px;
+        position:relative;
+    }
+    .time-content-container {
+        top:48%;
+        left:44.7%;
+    }
+    .meridiem_indicators {
+        text-align:center;
+        color:rgb(12, 238, 238);
+    }
+} */
