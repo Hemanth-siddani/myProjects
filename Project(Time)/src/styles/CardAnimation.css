@@ -43,7 +43,7 @@ body {
   display: inline;
   font-family:Orbitron;
   color:#fff;
-  font-size: larger;
+  font-size: 30px;
   text-align: center;
   text-shadow:0px 5px 15px rgba(0,0,0,.90);
 
@@ -53,8 +53,8 @@ body {
     text-align:center;
     margin:30px;
     font-family:Orbitron;
+    font-size:80px;
     text-shadow:0px 5px 20px rgba(9, 243, 243,.90);
-    font-size:30px;
     color:rgb(9, 243, 243);
 }
 

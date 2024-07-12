@@ -5,7 +5,7 @@ function CardAnimation(props) {
     return (
         <>
             <div className='rotate-frame-container'>
-                <img src="https://cdn.picpng.com/circle/circle-frame-colorful-design-54123.png" className='rotate-frame' />
+                <img src="public\Images\71400_gold-circle-png.png" className='rotate-frame' />
                 <div className='time-content-container'>
                     <p className='time-content'>{time_display}</p>
                     <p className='meridiem_indicators '>{meridiem_indicators}</p>
