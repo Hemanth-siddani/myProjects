@@ -146,7 +146,7 @@ function Form() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setErrors({})
-        }, 8000)
+        }, 5000)
 
 
         return () => clearTimeout(timer)
