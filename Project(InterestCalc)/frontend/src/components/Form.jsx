@@ -42,32 +42,55 @@ function Form() {
 
     let formValidations = (name, value) => {
         let error = {}
-        let specialCharacters = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '-', '+', '{', '}', '|', '.', '/', ',', '<', '>', '?', '!']
+        let specialCharacters = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '-', '+', '{', '}', '|', '/', ',', '<', '>', '?', '!']
+        let capitalLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'X', 'Y', 'Z']
+        let smallLetters = []
+        capitalLetters.map((eachLetter, index) => {
+            smallLetters[index] = eachLetter.toLowerCase()
+        })
+        let numericNumbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         switch (name) {
             case 'startingDate':
-                if (!value) error[name] = 'Starting date is required'
+                if (!value) {
+                    error[name] = 'Starting date is required.'
+                }
                 break
             case 'clientName':
-                if (!value) error[name] = 'Client name is required'
-                else if(specialCharacters.some((char) => value.includes(char))) error[name] = 'No special characters are allowed in this field.'
+                if (!value) {
+                    error[name] = 'Client name is required.'
+                }
+                else if ((numericNumbers.some((number) => value.includes(number))) || (specialCharacters.some((specialChar) => value.includes(specialChar)))) {
+                    error[name] = 'Only alphabets are allowed in this field.'
+                }
                 break
             case 'clientMobileNumber':
-                if (!value) error[name] = 'Mobile number is required'
-                else if (!/^\d+$/.test(value)) error[name] = 'Mobile number must be numeric'
-                else if(value.length !== 10) error[name] = 'Mobile number length must be 10 digits.'
+                if (!value) {
+                    error[name] = 'Mobile number is required.'
+                }
+                else if ((capitalLetters.some((capitalChar) => value.includes(capitalChar))) || (specialCharacters.some((specialChar) => value.includes(specialChar))) || (smallLetters.some((smallChar) => value.includes(smallChar)))) {
+                    error[name] = 'Only numbers are allowed in this field.'
+                }
+                else if (value.length !== 10) {
+                    error[name] = 'Mobile number length must be 10 digits.'
+                }
                 break
             case 'principleAmount':
-                if (!value) error[name] = 'Principle amount is required'
-                else if (!/^\d+$/.test(value)) error[name] = 'Principle amount must be numeric'
+                if (!value) {
+                    error[name] = 'Principle amount is required.'
+                }
+                else if ((capitalLetters.some((capitalChar) => value.includes(capitalChar))) || (specialCharacters.some((specialChar) => value.includes(specialChar))) || (smallLetters.some((smallChar) => value.includes(smallChar)))) {
+                    error[name] = 'Only numbers are allowed in this field.'
+                }
                 break
             case 'rateOfInterest':
-                if (!value) error[name] = 'Rate of interest is required'
-                else if (isNaN(parseFloat(value))) error[name] = 'Rate of interest must be a number'
+                if (!value) error[name] = 'Rate of interest is required.'
+                else if ((capitalLetters.some((capitalChar) => value.includes(capitalChar))) || (specialCharacters.some((specialChar) => value.includes(specialChar))) || (smallLetters.some((smallChar) => value.includes(smallChar)))) {
+                    error[name] = 'Only numbers are allowed in this field.'
+                }
                 break
             default:
-                break
+                break  
         }
-        console.log('error',error)
         return error
     }
 
@@ -76,10 +99,6 @@ function Form() {
         setClientObject({
             ...clientObject,
             [name]: value,
-        })
-        setErrors({
-            ...errors,
-            ...formValidations(name, value),
         })
     }
 
@@ -122,6 +141,16 @@ function Form() {
     useEffect(() => {
         typeConversion(clientArray)
     }, [clientArray])
+
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setErrors({})
+        }, 3000)
+
+
+        return () => clearTimeout(timer)
+    }, [errors])
 
     return (
         <div className="form-container">
