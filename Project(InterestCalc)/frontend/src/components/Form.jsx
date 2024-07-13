@@ -16,30 +16,14 @@ function Form() {
     })
     const [errors, setErrors] = useState({})
 
-    let findingMonthsDuration = (startingDate, endingDate) => {
-        let starting_date = new Date(startingDate)
-        let ending_date = new Date(endingDate)
-        let yearDifference = (ending_date.getFullYear() - starting_date.getFullYear()) * 12
-        let monthDifference = ((ending_date.getMonth() + 1) - (starting_date.getMonth() + 1))
-        let dateDifference = (ending_date.getDate() - starting_date.getDate()) * (1 / 31)
-        monthDifference += (yearDifference + dateDifference)
-        return parseFloat(monthDifference.toFixed(2))
-    }
-
     let typeConversion = (clientArray) => {
         clientArray.forEach((client) => {
             client.clientMobileNumber = parseInt(client.clientMobileNumber)
             client.principleAmount = parseInt(client.principleAmount)
             client.rateOfInterest = parseFloat(client.rateOfInterest)
-            client.timeInMonths = findingMonthsDuration(client.startingDate, client.currentDate)
-
-            let resultantInterest = (client.principleAmount * client.rateOfInterest * client.timeInMonths) / 100
-            client.resultantInterest = resultantInterest
-            console.log(client.startingDate, client.currentDate)
         })
         window.localStorage.setItem('clientArray', JSON.stringify(clientArray))
     }
-
     let formValidations = (name, value) => {
         let error = {}
         let specialCharacters = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '=', '-', '+', '{', '}', '|', '/', ',', '<', '>', '?', '!']
@@ -114,7 +98,7 @@ function Form() {
         const savedClientArray = JSON.parse(window.localStorage.getItem('clientArray')) || []
         setClientArray(savedClientArray)
     }, [])
-
+    
     let handleClick = () => {
         const newErrors = {}
         Object.keys(clientObject).forEach((key) => {
