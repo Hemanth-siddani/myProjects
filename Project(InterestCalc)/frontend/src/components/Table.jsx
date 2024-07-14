@@ -28,7 +28,6 @@ function Table() {
     }, [])
 
     const deleteClient = (index) => {
-        console.log(window.confirm('Do you want to delete the client record?'))
         if (window.confirm('Do you want to delete the client record?')) {
             let updatedClients = [...renderClient]
             updatedClients.splice(index, 1)
