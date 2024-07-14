@@ -1,6 +1,6 @@
 @font-face {
     font-family:Orbitron;
-    src: url('../public/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
+    src: url('../../public/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
 }
 .logoTitle {
     font-family:Orbitron;
