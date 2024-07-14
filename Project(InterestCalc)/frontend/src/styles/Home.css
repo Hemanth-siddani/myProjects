@@ -1,4 +1,4 @@
-body {
+/* body {
   height:100vh;
   background-image:url('../public/Images/Background_Image.jpg');
   background-repeat:no-repeat;
@@ -35,7 +35,7 @@ body {
     color:#000;
   }
   
-  /* Media Queries for Responsiveness */
+
   @media (max-width: 768px) {
     .mainTitle {
       font-size: 1.5em;
@@ -55,4 +55,4 @@ body {
       font-size: 0.8em;
     }
   }
-  
+   */

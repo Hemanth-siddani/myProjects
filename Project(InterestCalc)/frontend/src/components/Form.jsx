@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
-import '../styles/Form.css'
+// import '../styles/Form.css'
 
 function Form() {
 
