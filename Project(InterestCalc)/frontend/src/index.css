@@ -1,12 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* https://static.vecteezy.com/system/resources/previews/001/310/878/large_2x/rupee-coin-on-dark-blue-background-free-vector.jpg */
 
+/* https://static.vecteezy.com/system/resources/previews/001/310/878/large_2x/rupee-coin-on-dark-blue-background-free-vector.jpg */
+/* https://images8.alphacoders.com/944/944643.jpg */
 
 body {
     height:100vh;
-    background-image:url('https://images8.alphacoders.com/944/944643.jpg');
+    background-image:url('Images/Background_Image.jpg');
     background-repeat:no-repeat;
     background-size:100% 200%;
 }
