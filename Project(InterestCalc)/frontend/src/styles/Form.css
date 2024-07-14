@@ -1,3 +1,9 @@
+body {
+    height:100vh;
+    background-image:url('../public/Images/Background_Image.jpg');
+    background-repeat:no-repeat;
+    background-size:100% 200%;
+}
 .form-container {
     display: flex;
     justify-content: center;
