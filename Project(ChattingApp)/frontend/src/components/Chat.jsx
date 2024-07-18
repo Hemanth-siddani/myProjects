@@ -68,10 +68,8 @@ function Chat({ socket, username, roomCode }) {
       <div className='chat-body'>
         {chatList.map((eachMessage, index) => (
           <div key={index}>
-            <div onClick={() => deleteEachMessage(index)}>
               <p className='chatMessage' id={username !== eachMessage.user_name ? 'you' : 'other'}>{eachMessage.current_message}</p>
               <p className='username_and_time'>{`${eachMessage.current_time} (${eachMessage.user_name})`}</p>
-            </div>
           </div>
         ))}
       </div>
