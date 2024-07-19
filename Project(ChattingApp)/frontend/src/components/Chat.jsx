@@ -48,7 +48,13 @@ function Chat({ socket, username, roomCode }) {
     window.localStorage.removeItem('chatList')
     setChatList([])
   }
+  let deleteEachMessage = (index) => {
+    console.log('index',index)
+    let tempChatList = [...chatList]
+    tempChatList.splice(index,1)
+    setChatList(tempChatList)
 
+  }
   return (
     <div className='chatContainer'>
       <div className='chat-header'>
@@ -67,10 +73,10 @@ function Chat({ socket, username, roomCode }) {
       </div>
       <div className='chat-body'>
         {chatList.map((eachMessage, index) => (
-          <div key={index}>
+            <div key={index} onDoubleClick={() => deleteEachMessage(index)}>
               <p className='chatMessage' id={username !== eachMessage.user_name ? 'you' : 'other'}>{eachMessage.current_message}</p>
               <p className='username_and_time'>{`${eachMessage.current_time} (${eachMessage.user_name})`}</p>
-          </div>
+            </div>
         ))}
       </div>
       <div className='chat-footer'>
