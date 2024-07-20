@@ -52,6 +52,7 @@ function Chat({ socket, username, roomCode }) {
     let tempChatList = [...chatList]
     tempChatList.splice(index,1)
     setChatList(tempChatList)
+    window.localStorage.setItem('chatList',JSON.stringify(tempChatList))
 
   }
   return (

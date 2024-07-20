@@ -9,8 +9,6 @@ function App() {
   const [username, setUsername] = useState('')
   const [roomCode, setRoomCode] = useState('')
 
-
-
   const joinChat = () => {
     if (username !== '' && roomCode !== '') {
       socket.emit('join_room',roomCode)
@@ -44,7 +42,7 @@ function App() {
     <div className="App">
       {!showChat ? (
         <div className='roomContainer'>
-          <h2 className='roomTitle'>Join A chat</h2>
+          <h2 className='roomTitle'>Join A Chat</h2>
           <ul>
             <li className=''>
              <input type="text" placeholder='User name' value={username} onChange={(event => setUsername(event.target.value))} className='px-3 py-2 rounded-xl'/>
