@@ -39,7 +39,6 @@ function Chat({ socket, username, roomCode }) {
     socket.on('broadcasting_data', data => {
       setChatList(prevChat => [...prevChat, data])
 
-
       localStorage.setItem('chatList', JSON.stringify([...chatList, data]))
     })
   }, [socket])
