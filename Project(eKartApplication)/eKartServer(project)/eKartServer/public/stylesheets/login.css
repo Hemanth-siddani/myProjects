@@ -1,0 +1,138 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic;
+}
+.loginOutLine {
+    background-image:url('https://wallpaperboat.com/wp-content/uploads/2019/05/top-best-021.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow:auto;
+}
+.Login_Form {
+    height:880px;
+    width:580px;
+    margin:80px auto;
+    padding:20px;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+}
+.loginTitle {
+    text-align:center;
+    font-size:50px;
+    color:#000;
+    font-weight:900;
+    
+}
+.Login_inputEmail,.Login_inputPassword,.Login_inputCaptcha {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    width:250px;
+    padding:5px 0px;
+}
+.loginBlock {
+    box-shadow:none;
+    border:2px solid;
+    margin:20px 10px;
+    padding:20px 10px;
+    list-style-type:none;
+}
+.loginBlock:hover {
+    border:none;
+    box-shadow:0px 5px 15px rgba(0, 0, 0, .90);
+    transition:.5s;
+}
+.loginButtonBlock {
+    list-style-type:none;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    
+}
+.Login_loginButton,.Login_signupButton,.Login_forgotButton {
+    margin:10px 20px;
+    box-shadow:0px 5px 5px rgba(0,0,0,.90);
+    padding:10px;
+}
+.reload_SVG {
+    height:20px;
+    width:20px;
+}
+.Captcha_Display {
+    margin:20px 0px;
+}
+.captchaString {
+    background-image:url('https://wallpaperaccess.com/full/1483451.jpg');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    padding:10px 20px;
+    color:#fff;
+    font-size:30px;
+
+}
+.eyeOpen {
+    height:25px;
+    width:25px;
+}
+.eyeClose {
+    display:none;
+    height:25px;
+    width:25px;
+}
+.loginError {
+    display:none;
+    padding:20px;
+    border:2px solid;
+    color: rgb(231, 9, 9);
+    margin:20px 0px;
+    list-style-type:none;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    background-color:#000;
+}
+.Login_rememberDetails {
+    color: #000;
+}
+.Login_rememberCheckbox {
+    margin:0px 20px;
+}
+@media screen and (max-width: 800px) {
+    body {
+        background-image:url('https://wallpaperboat.com/wp-content/uploads/2019/05/top-best-021.jpg');
+        background-image:100%;
+    }
+    .Login_Form {
+        height:auto;
+        width:80%; 
+        margin:50px auto;
+        overflow:auto; 
+    }
+    .loginTitle {
+        font-size:40px;
+        color:#fff;
+    }
+    .Login_inputEmail,.Login_inputCaptcha {
+        width:160px;
+    }
+    .Login_inputPassword {
+        width:140px;
+    }
+    .Login_loginButton,.Login_signupButton,.Login_forgotButton {
+        margin:10px;   
+    }
+    .Login_rememberDetails {
+        color:#fff;
+    }
+    .loginButtonBlock {
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+    }
+    .reload_SVG {
+        margin:0px 50px;
+    }
+}
+
+/* captchaString */

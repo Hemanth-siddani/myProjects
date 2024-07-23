@@ -1,0 +1,94 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+.productOutLine {
+    background-image:url('https://wallpaperboat.com/wp-content/uploads/2019/05/top-best-021.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow:auto;
+}
+.Product_Form {
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    height:1500px;
+    width:680px;
+    margin:80px auto;
+    padding:20px;
+}
+.productTitle {
+    text-align:center;
+    font-size:50px;
+    color:#000;
+    font-weight:900;
+}
+.productId,.productName,.productPrice,.productDiscountPercentage,.productManufacture,.productImageUrl,.productRating,.productTitleInfo,.inStock,.maxDeliveryDays,.itemsInStock {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    width:250px;
+    padding:5px 0px;
+}
+.productDescripition {
+    outline:none;
+    border:none;
+    min-height:180px;
+    min-width:350px;
+    padding:5px 0px;
+}
+.productImageUrl_01,.productImageUrl_02,.productImageUrl_03 {
+    outline:none;
+    border:none;
+    display:inline;
+    border-radius:20px;
+    width:250px;
+    padding:5px 0px;
+    margin:10px;
+}
+.productBlock {
+    box-shadow:none;
+    border:2px solid;
+    margin:20px 10px;
+    padding:20px 10px;
+    list-style-type:none;
+}
+.productBlock:hover {
+    border:none;
+    box-shadow:0px 5px 15px rgba(0, 0, 0, .90);
+    transition:.5s;
+}
+.producButtonBlock {
+    padding:30px 0px;
+    display:flex;
+    justify-content:space-evenly;
+    flex-direction:column;
+    gap:30px;
+}
+.productSubmitButton,.backToProductPage {
+    box-shadow:0px 5px 15px rgba(0, 0, 0, .90);
+    padding:10px;
+}
+.productSuccessMessage {
+    display:none;
+    padding:20px;
+    border:2px solid;
+    color: rgb(24, 231, 9);
+    margin:20px 0px;
+    list-style-type:none;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    background-color:#000;
+}
+.productErrorMessage {
+    display:none;
+    padding:20px;
+    border:2px solid;
+    color: rgb(231, 9, 9);
+    margin:20px 0px;
+    list-style-type:none;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    background-color:#000;
+    font-size:25px;
+}
+

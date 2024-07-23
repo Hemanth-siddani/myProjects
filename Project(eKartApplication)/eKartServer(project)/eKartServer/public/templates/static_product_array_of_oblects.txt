@@ -1,0 +1,131 @@
+
+let productData = [
+    {
+        "product_Name" : 'Laptop',
+        "actual_Price" : 50000,
+        "discounted_Percentage" : 12,
+        "manufacture" : 'Dell',
+        "product_Image" : 'https://m.media-amazon.com/images/I/51rEPuvNYFL._SX522_.jpg',
+        "rating": 2.5
+    },
+    {
+        "product_Name" : 'TV',
+        "actual_Price" : 48000,
+        "discounted_Percentage" : 9,
+        "manufacture" : 'Sony',
+        "product_Image" : 'https://m.media-amazon.com/images/I/716EqdwVV9L._SX522_.jpg',
+        "rating": 3.5
+    },
+    {
+        "product_Name" : 'TV',
+        "actual_Price" : 65000,
+        "discounted_Percentage" : 8,
+        "manufacture" : 'Samsung',
+        "product_Image" : 'https://m.media-amazon.com/images/I/81s35LoX36L._SX522_.jpg',
+        "rating": 4.5
+    },
+    {
+        "product_Name" : 'Laptop',
+        "actual_Price" : 50000,
+        "discounted_Percentage" : 15,
+        "manufacture" : 'HP',
+        "product_Image" : 'https://m.media-amazon.com/images/I/71JcuGuw4XL._SX522_.jpg',
+        "rating": 3.5
+    },
+    {
+        "product_Name" : 'Laptop',
+        "actual_Price" : 65000,
+        "discounted_Percentage" : 8,
+        "manufacture" : 'ASUS',
+        "product_Image" : 'https://m.media-amazon.com/images/I/71lYhcc++AL._SX679_.jpg',
+        "rating": 4.5
+    },
+    {
+        "product_Name" : 'Laptop',
+        "actual_Price" : 50000,
+        "discounted_Percentage" : 6,
+        "manufacture" : 'Lenovo',
+        "product_Image" : 'https://m.media-amazon.com/images/I/61nC5tJlUEL._SX679_.jpg',
+        "rating": 2.5
+    },
+]
+
+
+// let liTag = document.createElement("li");
+  // let ulTag = document.createElement("ul");
+  // let li1 = document.createElement("li");
+  // li1.innerText = 'Product Name: ' + productData."product_Name";
+  // ulTag.append(li1);
+
+  // let li2 = document.createElement("li");
+  // li2.innerText = 'Price:'
+
+  // let span1 = document.createElement("span");
+  // span1.setAttribute("class", "actualPrice");
+  // span1.innerText = productData."actual_Price";
+  // li2.append(span1);
+
+  // let span2 = document.createElement("span");
+  // span2.setAttribute("class", "discountedPrice");
+
+  // span2.innerText = discount_Price;
+  // li2.append(span2);
+  // ulTag.append(li2);
+
+  // let li3 = document.createElement("li");
+  // li3.innerText = '"manufacture"r: ' + productData."manufacture";
+  // ulTag.append(li3);
+
+  // let li4 = document.createElement("li");
+  // let imgTag = document.createElement("img");
+  // imgTag.setAttribute("src", productData."product_Image");
+  // li4.append(imgTag);
+  // ulTag.append(li4);
+
+  // let li5 = document.createElement('li');
+  // li5.setAttribute("id", 'ratingStars_' + index);
+  // ulTag.append(li5);
+  // liTag.append(ulTag);
+
+  // document.querySelector(".productDetails").append(liTag);
+
+
+
+  Login Captcha
+
+
+  // function Captcha_Generator() {
+//     let Login_inputCaptcha = document.querySelector(`.Login_inputCaptcha`).value;
+//     let captchaString = document.querySelector(`.captchaString`).innerHTML;
+//     if(Login_inputCaptcha === captchaString) {
+//           let Login_loginButton = document.querySelector(`.Login_loginButton`);
+//           Login_loginButton.disabled = false;
+
+//           Login_loginButton.addEventListener('click',() => {
+//              document.querySelector(`.Login_inputCaptcha`).value = '';
+//           })
+//     }
+//     else {
+//         let Login_loginButton = document.querySelector(`.Login_loginButton`);
+//         Login_loginButton.disabled = true;
+//     }
+// }
+
+// let reloadCaptcha = () => {
+//     let captchaString = document.querySelector(`.captchaString`);
+//     let Captcha_String = `ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789`;
+//     let temp = ``;
+
+//     for(let i=0 ; i<5 ; i++) {
+//         temp += Captcha_String[Math.floor(Math.random()*Captcha_String.length)];
+//     } 
+//     captchaString.innerHTML = temp;
+//     if(temp === document.querySelector(`.Login_inputCaptcha`).value) {
+//          document.querySelector(`.Login_loginButton`).disabled = false;
+//     }
+//     else {
+//         document.querySelector(`.Login_loginButton`).disabled = true;
+//     }
+// };
+
+// Function to generate random captcha

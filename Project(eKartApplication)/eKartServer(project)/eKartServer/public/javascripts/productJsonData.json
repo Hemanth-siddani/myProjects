@@ -1,0 +1,92 @@
+[
+    {
+        "product_Id" : "product_01",
+        "product_Name" : "Mobile",
+        "actual_Price" : 50000,
+        "discount_Percentage" : 12,
+        "manufacture" : "Vivo",
+        "product_Image" : "https://m.media-amazon.com/images/I/71q-0gZcl6L._SX679_.jpg",
+        "Title" : "Vivo T2x 5G (Marine Blue, 128 GB) (6 GB RAM)",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/71q-0gZcl6L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71amoFTEyGL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61GzfAILOdL._SX679_.jpg"
+        ],
+        "rating" : 2.5
+    },
+    {
+        "product_Id" : "product_02",
+        "product_Name" : "TV",
+        "actual_Price" : 48000,
+        "discount_Percentage" : 9,
+        "manufacture" : "Vu",
+        "product_Image" : "https://m.media-amazon.com/images/I/71ep8pVlgyL._SX679_.jpg",
+        "Title" : "Vu 139 cm (55 inches) The GloLED Series 4K Smart LED Google TV 55GloLED (Grey)",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/71ep8pVlgyL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/812f-gPGjHL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/81PUueaS7PL._SX679_.jpg"
+        ],
+        "rating" : 3.5
+    },
+    {
+        "product_Id" : "product_03",
+        "product_Name" : "TV",
+        "actual_Price" : 65000,
+        "discount_Percentage" : 8,
+        "manufacture" : "Samsung",
+        "product_Image" : "https://m.media-amazon.com/images/I/71G3w6wIhZL._SX569_.jpg",
+        "Title" : "Samsung 138 cm (55 Inches) Crystal Vision 4K Ultra HD Smart LED TV",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/71G3w6wIhZL._SX569_.jpg",
+            "https://m.media-amazon.com/images/I/71ScK+--VEL._SX569_.jpg",
+            "https://m.media-amazon.com/images/I/71vRiT3MDLL._SX569_.jpg"
+        ],
+        "rating" : 4.5
+    },
+    {
+        "product_Id" : "product_04",
+        "product_Name" : "Laptop",
+        "actual_Price" : 50000,
+        "discount_Percentage" : 15,
+        "manufacture" : "ASUS",
+        "product_Image" : "https://m.media-amazon.com/images/I/61xkKiYZVZL._SX679_.jpg",
+        "Title" : "ASUS Vivobook 16X (2022), 16.0-inch (40.64 cms) FHD+ 16:10, AMD Ryzen 5 5600H, Thin Laptop ",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/61xkKiYZVZL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/81gex4cYH6L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61Jj60hH8fL._SX679_.jpg"
+        ],
+        "rating" : 3.5
+    },
+    {
+        "product_Id" : "product_05",
+        "product_Name" : "Laptop",
+        "actual_Price" : 65000,
+        "discount_Percentage" : 8,
+        "manufacture" : "HP",
+        "product_Image" : "https://m.media-amazon.com/images/I/713wikXPzCL._SX679_.jpg",
+        "Title" : "HP Pavilion X360 11th Gen Intel Core i7 14 FHD Multitouch 2in1 Laptop",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/713wikXPzCL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61HRLONnZSL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/71pmEqy6+RL._SX679_.jpg"
+        ],
+        "rating" : 4.5
+    },
+    {
+        "product_Id" : "product_06",
+        "product_Name" : "Laptop",
+        "actual_Price" : 50000,
+        "discount_Percentage" : 6,
+        "manufacture" : "Lenovo",
+        "product_Image" : "https://m.media-amazon.com/images/I/61OtrBpfvIL._SX679_.jpg",
+        "Title" : "Lenovo IdeaPad Slim 5 Intel Core i5 12450H 14 (35.5cm) WUXGA+ IPS Laptop",
+        "small_Product_Images" : [
+            "https://m.media-amazon.com/images/I/61OtrBpfvIL._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61-BVUAst8L._SX679_.jpg",
+            "https://m.media-amazon.com/images/I/61kpqFi9TeL._SX679_.jpg"
+        ],
+        "rating" : 2.5
+    }
+]

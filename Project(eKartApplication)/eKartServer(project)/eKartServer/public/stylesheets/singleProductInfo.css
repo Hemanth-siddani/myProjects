@@ -1,0 +1,148 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+.breadcrumb_content {
+    margin:20px;
+    padding:20px;
+}
+.breadcrumb_Login,.breadcrumb_productDetails,.breadcrumb_productId {
+    font-size:30px;
+} 
+
+/* Product Content */
+
+.detailsCol > div {
+    margin:15px;
+    /* border:2px solid; */
+}
+.productImageDetails > div:nth-child(2) {
+    /* border:2px solid;  */
+    background-color:#f1efef;
+}
+.productImageDetails {
+    height:500px;
+    height:80vh;
+}
+.productImageThumbnails > div {
+   border:2px solid #ccc;
+   height:100px;
+   width:100px;
+   margin:20px;
+   border-radius:10px;
+   background-size: 100% 100%;
+
+}
+.productImageThumbnails > div:hover  {
+    border:2px solid;
+}
+.biggerProductImageThumbnails {
+    background-size:100% 100%;
+}
+.productInfo {
+    text-indent:20px;
+    margin:20px 0px;
+}
+.amountDisplay,.placeOfProduct {
+    margin:3rem 0px;
+    padding:10px;
+}
+.dollarIcon{
+    height:50px;
+    width:50px;
+}
+.mapPointer {
+    height:30px;
+    width:30px;
+}
+.amountDisplay {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background-color:rgb(186, 192, 183);
+}
+.placeOfProduct {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background-color:rgb(15, 221, 240);
+}
+.priceInDollar {
+    font-size:70px;
+}
+.productPlace {
+    font-size:20px;
+}
+.singleProductContainer_02 {
+    border:2px solid #dedcdc;
+    border-radius:10px;
+}
+.productPlace {
+    display:block;
+}
+.inStockPannel {
+    display:flex;
+    align-items:center;
+    font-size:50px;
+    color:green;
+    font-weight:500;
+}
+.itemsInStockPannel {
+    display:flex;
+    align-items:center;
+    font-size:30px;
+    color:green;
+    font-weight:500;
+}
+.maxDeliveryDaysPannel {
+    display:flex;
+    align-items:center;
+    font-size:30px;
+    color:green;
+    font-weight:500;
+}
+.inStockString {
+    font-size:25px;
+    color:#000;
+    margin:0px 10px;
+    text-align:center;
+}
+.itemsInStockString {
+    font-size:25px;
+    color:#000;
+    margin:0px 10px;
+    text-align:center;
+}
+.maxDeliveryDaysString {
+    font-size:25px;
+    color:#000;
+    margin:0px 10px;
+    text-align:center;
+}
+.singleProductDescription {
+    text-align:justify;
+    font-size:18px;
+}
+.purchaseButtonBlock {
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+.addToCartButtton {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    padding:10px 20px;
+    font-size:20px;
+    background-color:rgb(214, 190, 12);
+}
+.buyNowButton {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    padding:10px 20px;
+    font-size:20px;
+    background-color:rgb(234, 133, 9);
+} 
+

@@ -1,0 +1,51 @@
+<div class="Container productDetailsOutLine">
+    <!-- <div class="productDetailsContainer">
+        <h2 class="Title">Product Details</h2>  
+    </div> -->
+
+
+
+
+    <div class="Pannels">
+        <div class="productListInfoPannel">
+           <div class="CategoriesBlock">
+               <h2>Categories</h2>
+               <div><input type="checkbox" height="50px" width="50px">Clothes</div>
+               <div><input type="checkbox" height="50px" width="50px">Electronics</div>
+               <div><input type="checkbox" height="50px" width="50px">Furniture</div>
+               <div><input type="checkbox" height="50px" width="50px">Foot Wear</div>
+           </div>
+           <hr>
+           <div class="priceRangeBlock">
+               <div class="priceDisplay">Price</div>
+               <div class="priceControls">
+                  <!-- <input type="range" min="1000" max="10000" oninput="renderPrice()" class="priceValue"> -->
+                  <input type="number" class="priceValue" placeholder="Enter price value">
+                  <input type="button" value="Apply" class="btn btn-sm btn-primary" onclick="filterData()">
+               </div>
+           </div>
+           <hr>
+           <div>
+            <input type="button" class="btn btn-secondary addproductButton" onclick="loadSelectedTemplate('insertProducts')" value="Add Product">
+           </div>
+           <hr>
+        </div>
+
+        <div class="productBlockPannel">
+            <div class="breadcrumb_content">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item breadcrumb_Login" onclick="loadSelectedTemplate('Login')">Login</li>
+                        <li class="breadcrumb-item breadcrumb_productDetails" onclick="loadSelectedTemplate('productDetails')">productDetails</li>
+                    </ol>
+                  </nav>
+            </div>
+            <div class="ErrorBlock"></div>
+            <ul class="productDetails"></ul> 
+
+        </div>
+    </div>
+</div>
+    
+
+

@@ -1,0 +1,155 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-shadow:border-box;
+    text-align:center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic;
+}
+.productDetailsOutLine {
+    height:auto;
+    overflow:auto;
+}
+.Container {
+    padding:20px;
+    margin:20px;
+}
+.productDetailsContainer > .Title {
+    color:rgb(209, 104, 12);
+    margin:20px;
+    font-size:30px;
+    font-weight:900;
+    background-color:#000;
+    padding:10px;
+}
+.productDetailsContainer > .Title:hover {
+    color:#fff;
+    transition:.5s;
+    font-size:50px;
+}
+  
+.productDetails img {
+    margin:3px;
+    padding:3px;
+    height:140px;
+    width:150px;
+}
+li {
+    list-style-type:none;
+}
+.productDetails > li {
+    float:left;
+    border: 2px solid;
+    width:300px;
+    margin:10px;
+    padding:10px;
+    background-color:#ffffff;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+}
+.productDetails > li:hover {
+    box-shadow:none;
+    transition:.3s;
+}    
+.productDetails ul {
+    margin:5px;
+    padding:5px;
+}
+.productDetails ul li {
+    border:2px solid;
+    margin:5px;
+    padding:5px;
+}
+.actualPrice {
+    color:rgb(240, 162, 17);
+    text-decoration:line-through;
+    margin:0px 5px;
+}
+.discountedPrice {
+    color:rgb(11, 107, 11);
+    font-weight:600;
+}
+.productTemplate {
+    display:none;
+    float:left;
+    border: 2px solid;
+    width:285px;
+    margin:10px;
+    padding:10px;
+    background-color:#ffffff;
+}
+
+
+.ErrorBlock {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    visibility:hidden;
+    height:70px;
+    width:700px;
+    border:3px solid;
+    color:rgb(248, 4, 4);
+    background-color:#000;
+    font-weight:500;
+    font-size:30px;
+}
+.addproductButton {
+    margin:20px 0px;
+}
+/* Categories Block */
+
+.Pannels {
+  display:flex;
+}
+.productBlockPannel {
+    padding:10px;
+}
+.productListInfoPannel {
+    border:2px solid;
+    margin:20px;
+    padding:20px 50px;
+}
+.CategoriesBlock {
+   display:flex;
+   flex-direction:column;
+   justify-content:center;
+   gap:10px;
+   margin:50px 0px;
+}
+.priceRangeBlock {
+    margin:50px 0px;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin:0px 10px;
+    text-align:center;
+  }
+.priceDisplay {
+    border:2px solid;
+    padding:10px 20px;
+    font-size:30px;
+    background-color:#000;
+    color:#fff;
+    margin:20px 0px;
+}
+.breadcrumb_content {
+    margin:10px;
+    padding:20px;
+}
+.breadcrumb_Login,.breadcrumb_productDetails {
+    font-size:30px;
+}
+.priceControls {
+    display:flex;
+    gap:10px;
+
+}
+@media screen and (max-width:900px) {
+    .productDetailsOutLine {
+        height:auto;
+        width:90%; 
+        margin:50px auto;
+        overflow:auto; 
+    }
+}
+

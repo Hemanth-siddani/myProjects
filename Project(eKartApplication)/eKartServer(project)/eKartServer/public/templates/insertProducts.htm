@@ -1,0 +1,61 @@
+<div class="productOutLine">
+    <form action="" class="Product_Form">
+    <h2 class="productTitle">Form</h2>
+    <ul class="productForm">
+      <div class="d-flex">
+         <div class="productContainer_01">
+            <li class="productBlock">
+               <input type="text" class="productId" placeholder="Product id">
+            </li>
+             <li class="productBlock">
+                 <input type="text" class="productName" placeholder="Product name">
+             </li>
+             <li class="productBlock">
+               <input type="number" class="productPrice" placeholder="Product price">
+             </li>
+             <li class="productBlock">
+               <input type="url" class="productTitleInfo" placeholder="Product Title">
+            </li>
+            <li class="productBlock">
+               <input type="url" class="itemsInStock" placeholder="Items in stock">
+            </li>
+         </div>
+         <div class="productContainer_02">
+            <li class="productBlock">
+               <input type="number" class="productDiscountPercentage" placeholder="Discount percentage">
+            </li>
+            <li class="productBlock">
+               <input type="text" class="productManufacture" placeholder="Manufacture">
+            </li>
+            <li class="productBlock">
+               <input type="text" class="productRating" placeholder="Rating">
+            </li>
+            <li class="productBlock">
+               <input type="number" class="maxDeliveryDays" placeholder="Max delivery days">
+            </li>
+
+            <li class="productBlock">
+               <input type="text" class="inStock" placeholder="In stock(yes or no)">
+            </li>
+         </div>
+      </div>
+      <li class="productBlock">
+         <input type="url" class="productImageUrl" placeholder="Image URL">
+   </li>
+      <li class="productBlock">
+         <input type="url" class="productImageUrl_01" placeholder="Image URL 01">
+         <input type="url" class="productImageUrl_02" placeholder="Image URL 02">
+         <input type="url" class="productImageUrl_03" placeholder="Image URL 03">
+     </li>
+     <li class="productBlock">
+      <textarea class="productDescripition" placeholder="Product description"></textarea>
+     </li>
+      <li class="productSuccessMessage"></li>
+      <li class="productErrorMessage"></li>
+      <li class="producButtonBlock">
+         <input type="button" class="btn btn-info productSubmitButton" value="Insert" onclick="handleInsertButtonClick()">
+         <input type="button" class="btn btn-dark text-white backToProductPage" value="Back" onclick="loadSelectedTemplate('productDetails')" >
+      </li>
+    </ul>
+</form>
+</div>

@@ -1,0 +1,130 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style:italic;
+}
+.signupOutLine {
+    background-image:url('https://wallpaperboat.com/wp-content/uploads/2019/05/top-best-021.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    overflow:auto;
+}
+.Signup_Form {
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    height:830px;
+    width:550px;
+    margin:80px auto;
+    padding:20px;
+}
+.signupTitle {
+    text-align:center;
+    font-size:50px;
+    color:#000;
+    font-weight:900;
+}
+.Signup_inputName,.Signup_inputMobile,.Signup_inputEmail,.Signup_inputPassword {
+    outline:none;
+    border:none;
+    border-radius:20px;
+    width:250px;
+    padding:5px 0px;
+    
+}
+.signupBlock {
+    box-shadow:none;
+    border:2px solid;
+    margin:20px 10px;
+    padding:20px 10px;
+    list-style-type:none;
+}
+.signupBlock:hover {
+    border:none;
+    box-shadow:0px 5px 15px rgba(0, 0, 0, .90);
+    transition:.5s;
+}
+.signupButtonBlock {
+    list-style-type:none;
+    text-align:center;
+}
+.Signup_signupButton,.Signup_backToLogin {
+    margin: 10px 20px;
+    box-shadow:0px 5px 5px rgba(0,0,0,.90);
+    padding:10px 40%;
+}
+.reload_SVG {
+    height:20px;
+    width:20px;
+    margin:0px 20px;
+}
+.Captcha_Display {
+    margin:20px 0px;
+
+}
+.eyeOpen {
+    height:25px;
+    width:25px;
+}
+.eyeClose {
+    display:none;
+    height:25px;
+    width:25px;
+}
+.signupError {
+    display:none;
+    padding:20px;
+    border:2px solid;
+    color: rgb(231, 9, 9);
+    margin:20px 0px;
+    list-style-type:none;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    background-color:#000;
+}
+.signupSuccess {
+    display:none;
+    padding:20px;
+    border:2px solid;
+    color: rgb(24, 231, 9);
+    margin:20px 0px;
+    list-style-type:none;
+    text-align:center;
+    box-shadow:0px 5px 15px rgba(0,0,0,.90);
+    background-color:#000;
+}
+.Signup_rememberDetails {
+    color:#000;
+}
+.Signup_rememberCheckbox {
+    margin:0px 20px;
+}
+@media screen and (max-width: 800px) {
+    body {
+        height:90vh;
+        overflow:auto;
+    }
+    .Signup_Form {
+        height:auto;
+        width:80%; 
+        margin:50px auto;
+        overflow:auto; 
+    }
+    .signupTitle {
+        font-size:40px;
+        color:#fff;
+    }
+    .Signup_rememberDetails {
+        color:#fff;
+    } 
+    .Signup_inputName,.Signup_inputMobile,.Signup_inputEmail{
+        width:180px;
+    }
+    .Signup_inputPassword  {
+        width:150px;
+    }
+    .Signup_signupButton {
+        margin:0px 10px;
+        padding:10px 20%; 
+    }
+}
