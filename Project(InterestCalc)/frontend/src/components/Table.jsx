@@ -1,83 +1,95 @@
 import React, { useEffect, useState } from 'react'
+import Axios from 'axios'
+import '../styles/Table.css'
 
 function Table() {
-    const [renderClient, setRenderClient] = useState([])
+  const [displayClients, setDisplayClients] = useState([])
 
-    let InterestCalculation = (principle, rate, time) => {
-        return ((principle * rate * time) / 100).toFixed(2)
-    }
-    let findingMonthDuration = (startingDate) => {
-        let ending_date = new Date()
-        let starting_date = new Date(startingDate)
+  let typeConversion = (dbResponseData) => {
+    dbResponseData.map((tempClient) => {
+      tempClient.clientMobileNumber = parseInt(tempClient.clientMobileNumber)
+      tempClient.principleAmount = parseInt(tempClient.principleAmount)
+      tempClient.rateOfInterest = parseFloat(tempClient.rateOfInterest)
+    })
 
-        let yearDifference = ((ending_date.getFullYear() - starting_date.getFullYear()) * 12)
-        let monthDifference = ((ending_date.getMonth() + 1) - (starting_date.getMonth() + 1))
-        let dateDifference = ((ending_date.getDate() - starting_date.getDate()) * (1 / 31))
+    return dbResponseData
+  }
+  let findingMonthsDuration = (startingDate) => {
+    let ending_date = new Date()
+    let starting_date = new Date(startingDate)
 
-        monthDifference += (yearDifference + dateDifference)
+    let yearDifference = ((ending_date.getFullYear() - starting_date.getFullYear()) * 12)
+    let monthDifference = ((ending_date.getMonth() + 1) - (starting_date.getMonth() + 1))
+    let dateDifference = ((ending_date.getDate() - starting_date.getDate()) * (1 / 31))
 
-        return parseFloat(monthDifference.toFixed(2))
-    }
+    monthDifference += (yearDifference + dateDifference)
 
-    useEffect(() => {
-        let data = window.localStorage.getItem('clientArray')
-        if (data) {
-            let formattedData = JSON.parse(data)
-            setRenderClient(formattedData || [])
-        }
-    }, [])
+    return parseFloat(monthDifference.toFixed(2))
+  }
+  let findingInterest = (principle_amount,rate_of_interest,time_duration) => {
+    return parseFloat(((principle_amount * rate_of_interest * time_duration) / 100).toFixed(2))
+  }
+  let findingTotalAmount = (Principle_Amount,Interest) => {
+    return parseFloat((Principle_Amount + Interest).toFixed(2))
+  }
+  useEffect(() => {
+    Axios.post('http://localhost:8080').then((dbResponse) => {
+      if (dbResponse.data) {
+        let typeConvertedData = typeConversion(dbResponse.data)
+        console.log('typeConvertedData', typeConvertedData)
+        setDisplayClients(typeConvertedData)
+      }
+      else {
+        console.log('No data found.')
+      }
+    })
+  }, [])
+  let clientDeletion = (clientId) => {
+    console.log('This is clientDeletion function.',clientId)
+    Axios.delete(`http://localhost:8080/client_deletion/${clientId}`)
+    setDisplayClients(displayClients.filter(client => client._id !== clientId))
+  }
+  return (
+    <div className="table-container">
+      <h2 className="table-header">Client Table</h2>
+      <table>
+        <thead>
+          <tr className="table-row">
+            <th className="table-cell">Starting date</th>
+            <th className="table-cell">Client Name</th>
+            <th className="table-cell">Mobile Number</th>
+            <th className="table-cell">Principal Amount</th>
+            <th className="table-cell">Rate of Interest</th>
+            <th className="table-cell">Time in months</th>
+            <th className="table-cell">Interest</th>
+            <th className="table-cell">Total amount</th>
+            <th className="table-cell">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {displayClients.map((client, index) => (
+            <tr key={index} className="table-row">
+              <td className="table-cell">{client.startingDate}</td>
+              <td className="table-cell">{client.clientName}</td>
+              <td className="table-cell">{client.clientMobileNumber}</td>
+              <td className="table-cell">{client.principleAmount}</td>
+              <td className="table-cell">{client.rateOfInterest}</td>
+              <td className="table-cell">{findingMonthsDuration(client.startingDate)}</td>
+              <td className="table-cell">{findingInterest(client.principleAmount,client.rateOfInterest,findingMonthsDuration(client.startingDate))}</td>
+              <td className="table-cell">{findingTotalAmount(client.principleAmount,findingInterest(client.principleAmount,client.rateOfInterest,findingMonthsDuration(client.startingDate)))}</td>
+              <td className="table-cell">
+                <button className='deleteButton' onClick={() => clientDeletion(client._id)}>Delete</button>
+              </td>
 
-    const deleteClient = (index) => {
-        if (window.confirm('Do you want to delete the client record?')) {
-            let updatedClients = [...renderClient]
-            updatedClients.splice(index, 1)
-            setRenderClient(updatedClients)
-            window.localStorage.setItem('clientArray', JSON.stringify(updatedClients))
-        }
-    }
-
-    const handleDelete = (index) => {
-        deleteClient(index)
-    }
-
-    return (
-        <div className="container mx-auto p-4">
-            <div className="overflow-x-scroll overflow-y-scroll">
-                <table className="min-w-full bg-white">
-                    <thead>
-                        <tr className="w-full bg-gray-300 font-bold text-left">
-                            <th className="p-2">Date</th>
-                            <th className="p-2">Client Name</th>
-                            <th className="p-2">Mobile Number</th>
-                            <th className="p-2">Principle Amount</th>
-                            <th className="p-2">Rate of Interest</th>
-                            <th className="p-2">Time in Months</th>
-                            <th className="p-2">Interest</th>
-                            <th className="p-2">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {renderClient.map((eachClient, index) => (
-                            <tr key={index} className="w-full bg-white hover:bg-gray-100">
-                                <td className="p-2">{eachClient.startingDate}</td>
-                                <td className="p-2">{eachClient.clientName}</td>
-                                <td className="p-2">{eachClient.clientMobileNumber}</td>
-                                <td className="p-2">{eachClient.principleAmount}</td>
-                                <td className="p-2">{eachClient.rateOfInterest}</td>
-                                <td className="p-2">{findingMonthDuration(eachClient.startingDate)}</td>
-                                <td className="p-2">{InterestCalculation(eachClient.principleAmount, eachClient.rateOfInterest, findingMonthDuration(eachClient.startingDate))}</td>
-                                <td className="p-2">
-                                    <button className="btn btn-sm btn-outline-danger" type="button" onClick={() => handleDelete(index)}>
-                                        Delete
-                                    </button>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    )
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Table
+
+
+

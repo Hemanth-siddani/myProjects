@@ -1,13 +1,21 @@
-@font-face {
-    font-family:Orbitron;
-    src: url('../../public/Fonts/Orbitron/Orbitron-VariableFont_wght.ttf');
-}
-.logoTitle {
-    font-family:Orbitron;
-    font-style:italic;
-    font-weight:900;
+
+.renderPageButton {
+    position: fixed;
+    top: 20px;
+    left: 10px;
+    width: auto; /* Adjust width as needed */
+    padding: 10px 20px; /* Adjust padding as needed */
+    background: linear-gradient(135deg, #ff5858, #f09819);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
 }
 
-.NavLinkContainer {
-    padding:20px;
+.renderPageButton:hover {
+    background: linear-gradient(135deg, #f09819, #ff5858);
 }

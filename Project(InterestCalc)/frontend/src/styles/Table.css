@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@font-face {
+    font-family:fontStyle;
+    font-size: 30px;
+    src: url('../../public/Fonts/adventure/Adventure\ Hollow.otf');
+}
+body {
+    height: 100vh;
+    overflow:hidden;
+    background: linear-gradient(135deg, #a2c2e0, #004080);
+    background-repeat: no-repeat;
+    padding:10px;
+}
+
+.table-container {
+    display: block;
+    width:800px;
+    max-height: 80vh; 
+    border-radius: 10px;
+    overflow: auto; 
+    background: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-out;
+    font-family: 'Poppins', sans-serif;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 10px; 
+    margin:20px;
+}
+
+.table-header {
+    text-align:center;
+    background-color:rgb(7, 204, 238);
+    border-radius:50px;
+    font-family:fontStyle;
+    font-weight: bold;
+    padding:10px;
+    width:120vw;
+    margin-left:20px;
+}
+.teamIcon {
+    height:50px;
+    width:50px;
+}
+
+.table-row {
+    transition: background-color 0.3s;
+}
+
+.table-row:hover {
+    background-color: rgba(0, 0, 255, 0.1); 
+}
+
+.table-cell {
+    flex: 1;
+    padding: 10px; /* Reduced padding */
+    text-align: center;
+    min-width: 150px; 
+    white-space: nowrap; /* Prevents text wrapping in cells */
+}
+
+.table-header .table-cell, .table-row .table-cell {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2); 
+}
+
+.table-cell:last-child {
+    border-right: none;
+}
+
+.deleteButton {
+    padding: 5px 10px; /* Reduced padding */
+    background: linear-gradient(135deg, #ff5858, #f09819);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+}
+
+.deleteButton:hover {
+    background: linear-gradient(135deg, #f09819, #ff5858);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
