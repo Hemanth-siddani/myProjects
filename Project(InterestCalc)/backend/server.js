@@ -1,7 +1,7 @@
 
 const express = require('express')
 const cors = require('cors')
-const { MongoClient,ObjectId} = require('mongodb')
+const {MongoClient,ObjectId} = require('mongodb')
 const url = 'mongodb://127.0.0.1:27017'
 const client = new MongoClient(url)
 const app = express()
@@ -31,7 +31,8 @@ app.post('/', async (req, res) => {
     const clientRequest = req.body
 
     // Validate clientRequest object
-    if (clientRequest || clientRequest.clientName || clientRequest.clientMobileNumber || clientRequest.principleAmount || clientRequest.rateOfInterest) {
+    //  || clientRequest.clientName || clientRequest.clientMobileNumber || clientRequest.principleAmount || clientRequest.rateOfInterest
+    if (clientRequest) {
         try {
             const dbResponse = await dbConnection(clientRequest)
             res.send(JSON.stringify(dbResponse))
