@@ -54,7 +54,7 @@ function Table() {
       <h2 className="table-header">Client Table</h2>
       <table>
         <thead>
-          <tr className="table-row">
+          <tr className="table-row-title">
             <th className="table-cell">Starting date</th>
             <th className="table-cell">Client Name</th>
             <th className="table-cell">Mobile Number</th>

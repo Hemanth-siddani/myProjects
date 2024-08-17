@@ -46,8 +46,10 @@ body {
 .table-row {
     transition: background-color 0.3s;
 }
-
 .table-row:hover {
+    background-color:rgb(7, 204, 238);
+}
+.table-row-title {
     background-color: rgba(0, 0, 255, 0.1); 
 }
 
