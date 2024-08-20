@@ -29,29 +29,31 @@ function Form() {
         })
     }
 
-    const formValidation = (event) => {
+    const formValidation = () => {
         const { startingDate, clientName, clientMobileNumber, principleAmount, rateOfInterest } = clientObject
         if (!startingDate || !clientName || !clientMobileNumber || !principleAmount || !rateOfInterest) {
             setErrorMessage('Must fill all the fields.');
-            return false;
-        }
-        if (!startingDate) {
-            setErrorMessage('Starting date is required')
             return false
         }
 
         for (let i = 0; i < clientName.length; i++) {
             const charCode = clientName.charCodeAt(i)
+            console.log('charCode ',charCode)
             if (!(charCode >= 65 && charCode <= 90) && // A-Z
                 !(charCode >= 97 && charCode <= 122) && // a-z
                 charCode !== 32) { // space
-                setErrorMessage('Client name must contain only alphabets and spaces')
-                return false
+                setErrorMessage('Client name must contain only alphabets and spaces');
+                return false;
             }
         }
 
-        if (clientMobileNumber.length !== 10 || isNaN(clientMobileNumber)) {
-            setErrorMessage('Client mobile number must be exactly 10 digits and only contain numbers')
+        if (clientMobileNumber.length !== 10) {
+            setErrorMessage('Client mobile number must be exactly 10 digits')
+            return false
+        }
+
+        if(isNaN(clientMobileNumber)) {
+            setErrorMessage('Client mobile number must be number type')
             return false
         }
 
@@ -60,7 +62,7 @@ function Form() {
             return false
         }
         if (isNaN(rateOfInterest) || rateOfInterest <= 0 || rateOfInterest > 100) {
-            setErrorMessage('Rate of interest must be a number between 1 and 100')
+            setErrorMessage('Rate of interest must be a positive number')
             return false
         }
         return true
