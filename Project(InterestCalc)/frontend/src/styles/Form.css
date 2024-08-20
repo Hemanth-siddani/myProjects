@@ -62,7 +62,10 @@ body {
   font-family: 'Poppins', sans-serif;
   font-weight: 500;
 }
-
+.errorMessage {
+  color:rgb(237, 6, 6);
+  margin:10px;
+}
 .submit-button:hover {
   background: linear-gradient(135deg, #f09819, #ff5858);
 }

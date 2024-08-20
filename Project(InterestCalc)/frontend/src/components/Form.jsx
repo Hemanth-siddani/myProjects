@@ -1,234 +1,76 @@
 
-// import React, { useState } from 'react';
-// import '../styles/Form.css';
-// import Axios from 'axios';
 
-// function Form() {
-//     const [errorObject,setErrorObject] = useState({
-//         startingDate: '',
-//         clientName: '',
-//         clientMobileNumber: '',
-//         principleAmount: '',
-//         rateOfInterest: '',
-//     })
-//     const [clientObject, setClientObject] = useState({
-//         startingDate: '',
-//         clientName: '',
-//         clientMobileNumber: '',
-//         principleAmount: '',
-//         rateOfInterest: '',
-//     });
-//     let formValidation = (keyName,Value) => {
-//         // console.log('\nkeyName',keyName,'\nValue',Value)
-//         let error = ''
-//         switch(keyName) {
-//             case 'startingDate':
-//                 if(!Value) {
-//                     console.log(keyName)
-//                     error = 'This field is required.'
-//                 }
-//                 break
-//             case 'clientName':
-//                 if(!Value) {
-//                     console.log(keyName)
-//                     error = 'This field is required.'
-//                 }
-//                 break
-//             case 'clientMobileNumber':
-//                 if(!Value) {
-//                     console.log(keyName)
-//                     error = 'This field is required.'
-//                 }
-//                 break
-//             case 'principleAmount':
-//                 if(!Value) {
-//                     console.log(keyName)
-//                     error = 'This field is required.'
-//                 }
-//                 break
-//             case 'rateOfInterest':
-//                 if(!Value) {
-//                     console.log(keyName)
-//                     error = 'This field is required.'
-//                 }
-//                 break
-//             default:
-//                 console.log('Invalid data')         
-//         }
-//         setErrorObject({
-//             ...errorObject,
-//             [keyName]: error
-//         })
-//     }
-//     const handleInput = (event) => {
-//         const { name, value } = event.target;
-//         setClientObject({
-//             ...clientObject,
-//             [name]: value,
-//         });
-//         formValidation(name,value)
-//     };
-
-//     const handleClick = async () => {
-//         if (Object.values(clientObject).every(val => val !== '')) {
-//             try {
-//                 const response = await Axios.post('http://localhost:8080/', clientObject);
-//                 console.log('Server response:', response.data);
-
-//                 setClientObject({
-//                     startingDate: '',
-//                     clientName: '',
-//                     clientMobileNumber: '',
-//                     principleAmount: '',
-//                     rateOfInterest: '',
-//                 });
-//             } catch (error) {
-//                 console.error('Error while submitting the form data:', error);
-//             }
-//         } 
-//     };
-
-//     return (
-//         <>
-//             <div className="glass-form">
-//                 <form>
-//                     <div className="form-group">
-//                         <label htmlFor="startingDate">Starting date</label>
-//                         <input
-//                             type="date"
-//                             name="startingDate"
-//                             value={clientObject.startingDate}
-//                             onChange={handleInput}
-//                         />
-//                         {!errorObject.startingDate && <p>{errorObject.startingDate}</p>}
-//                     </div>
-//                     <div className="form-group">
-//                         <label htmlFor="clientName">Client name</label>
-//                         <input
-//                             type="text"
-//                             name="clientName"
-//                             value={clientObject.clientName}
-//                             onChange={handleInput}
-//                         />
-//                         {errorObject.clientName && <p className='error'>{errorObject.clientName}</p>}
-//                     </div>
-//                     <div className="form-group">
-//                         <label htmlFor="clientMobileNumber">Client mobile number</label>
-//                         <input
-//                             type="text"
-//                             name="clientMobileNumber"
-//                             value={clientObject.clientMobileNumber}
-//                             onChange={handleInput}
-//                         />
-//                         {errorObject.clientMobileNumber && <p className='error'>{errorObject.clientMobileNumber}</p>}
-//                     </div>
-//                     <div className="form-group">
-//                         <label htmlFor="principleAmount">Principle amount</label>
-//                         <input
-//                             type="text"
-//                             name="principleAmount"
-//                             value={clientObject.principleAmount}
-//                             onChange={handleInput}
-//                         />
-//                         {errorObject.principleAmount && <p className='error'>{errorObject.principleAmount}</p>}
-//                     </div>
-//                     <div className="form-group">
-//                         <label htmlFor="rateOfInterest">Rate of interest</label>
-//                         <input
-//                             type="text"
-//                             name="rateOfInterest"
-//                             value={clientObject.rateOfInterest}
-//                             onChange={handleInput}
-//                         />
-//                         {errorObject.rateOfInterest && <p className='error'>{errorObject.rateOfInterest}</p>}
-//                     </div>
-//                     <button type="button" className="submit-button" onClick={handleClick}>
-//                         Add client
-//                     </button>
-//                 </form>
-//             </div>
-//         </>
-//     );
-// }
-
-// export default Form;
-
-
-// ********************************************
-
-
-import React, { useState } from 'react';
-import '../styles/Form.css';
-import Axios from 'axios';
+import React, { useEffect, useState } from 'react'
+import '../styles/Form.css'
+import Axios from 'axios'
 
 function Form() {
-    const [errorObject, setErrorObject] = useState({
-        startingDate: '',
-        clientName: '',
-        clientMobileNumber: '',
-        principleAmount: '',
-        rateOfInterest: '',
-    });
-    
+    const [errorMessage, setErrorMessage] = useState('')
     const [clientObject, setClientObject] = useState({
         startingDate: '',
         clientName: '',
         clientMobileNumber: '',
         principleAmount: '',
         rateOfInterest: '',
-    });
+    })
 
-    let formValidation = (keyName, value) => {
-        let error = '';
-        switch (keyName) {
-            case 'startingDate':
-                if (!value) {
-                    error = 'This field is required.';
-                }
-                break;
-            case 'clientName':
-                if (!value) {
-                    error = 'This field is required.';
-                }
-                break;
-            case 'clientMobileNumber':
-                if (!value) {
-                    error = 'This field is required.';
-                }
-                break;
-            case 'principleAmount':
-                if (!value) {
-                    error = 'This field is required.';
-                }
-                break;
-            case 'rateOfInterest':
-                if (!value) {
-                    error = 'This field is required.';
-                }
-                break;
-            default:
-                console.log('Invalid data');
-        }
-        setErrorObject({
-            ...errorObject,
-            [keyName]: error,
-        });
-    };
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setErrorMessage('')
+        }, 8000)
+        return () => clearTimeout(timer)
+    }, [errorMessage])
 
     const handleInput = (event) => {
-        const { name, value } = event.target;
+        const { name, value } = event.target
         setClientObject({
             ...clientObject,
             [name]: value,
-        });
-        formValidation(name, value);
-    };
+        })
+    }
+
+    const formValidation = (event) => {
+        const { startingDate, clientName, clientMobileNumber, principleAmount, rateOfInterest } = clientObject
+        if (!startingDate || !clientName || !clientMobileNumber || !principleAmount || !rateOfInterest) {
+            setErrorMessage('Must fill all the fields.');
+            return false;
+        }
+        if (!startingDate) {
+            setErrorMessage('Starting date is required')
+            return false
+        }
+
+        for (let i = 0; i < clientName.length; i++) {
+            const charCode = clientName.charCodeAt(i)
+            if (!(charCode >= 65 && charCode <= 90) && // A-Z
+                !(charCode >= 97 && charCode <= 122) && // a-z
+                charCode !== 32) { // space
+                setErrorMessage('Client name must contain only alphabets and spaces')
+                return false
+            }
+        }
+
+        if (clientMobileNumber.length !== 10 || isNaN(clientMobileNumber)) {
+            setErrorMessage('Client mobile number must be exactly 10 digits and only contain numbers')
+            return false
+        }
+
+        if (isNaN(principleAmount) || principleAmount <= 0) {
+            setErrorMessage('Principle amount must be a positive number')
+            return false
+        }
+        if (isNaN(rateOfInterest) || rateOfInterest <= 0 || rateOfInterest > 100) {
+            setErrorMessage('Rate of interest must be a number between 1 and 100')
+            return false
+        }
+        return true
+    }
 
     const handleClick = async () => {
-        if (Object.values(clientObject).every((val) => val !== '')) {
+        if (formValidation()) {
             try {
-                const response = await Axios.post('http://localhost:8080/', clientObject);
-                console.log('Server response:', response.data);
+                const response = await Axios.post('http://localhost:8080/', clientObject)
+                console.log('Server response:', response.data)
 
                 setClientObject({
                     startingDate: '',
@@ -236,78 +78,75 @@ function Form() {
                     clientMobileNumber: '',
                     principleAmount: '',
                     rateOfInterest: '',
-                });
-            } 
-            catch (error) {
-                console.error('Error while submitting the form data:', error);
+                })
+            } catch (error) {
+                console.error('Error while submitting the form data:', error)
             }
         }
-    };
+    }
 
     return (
-        <>
-            <div className="glass-form">
-                <form>
-                    <div className="form-group">
-                        <label htmlFor="startingDate">Starting date</label>
-                        <input
-                            type="date"
-                            name="startingDate"
-                            value={clientObject.startingDate}
-                            onChange={handleInput}
-                        />
-                        {errorObject.startingDate && <p className="error">{errorObject.startingDate}</p>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="clientName">Client name</label>
-                        <input
-                            type="text"
-                            name="clientName"
-                            value={clientObject.clientName}
-                            onChange={handleInput}
-                        />
-                        {errorObject.clientName && <p className="error">{errorObject.clientName}</p>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="clientMobileNumber">Client mobile number</label>
-                        <input
-                            type="text"
-                            name="clientMobileNumber"
-                            value={clientObject.clientMobileNumber}
-                            onChange={handleInput}
-                        />
-                        {errorObject.clientMobileNumber && <p className="error">{errorObject.clientMobileNumber}</p>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="principleAmount">Principle amount</label>
-                        <input
-                            type="text"
-                            name="principleAmount"
-                            value={clientObject.principleAmount}
-                            onChange={handleInput}
-                        />
-                        {errorObject.principleAmount && <p className="error">{errorObject.principleAmount}</p>}
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="rateOfInterest">Rate of interest</label>
-                        <input
-                            type="text"
-                            name="rateOfInterest"
-                            value={clientObject.rateOfInterest}
-                            onChange={handleInput}
-                        />
-                        {errorObject.rateOfInterest && <p className="error">{errorObject.rateOfInterest}</p>}
-                    </div>
-                    <button type="button" className="submit-button" onClick={handleClick}>
-                        Add client
-                    </button>
-                </form>
-            </div>
-        </>
-    );
+        <div className="glass-form">
+            <form>
+                <div className="form-group">
+                    <label htmlFor="startingDate">Starting date</label>
+                    <input
+                        type="date"
+                        name="startingDate"
+                        value={clientObject.startingDate}
+                        onChange={handleInput}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="clientName">Client name</label>
+                    <input
+                        type="text"
+                        name="clientName"
+                        value={clientObject.clientName}
+                        onChange={handleInput}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="clientMobileNumber">Client mobile number</label>
+                    <input
+                        type="text"
+                        name="clientMobileNumber"
+                        value={clientObject.clientMobileNumber}
+                        onChange={handleInput}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="principleAmount">Principle amount</label>
+                    <input
+                        type="text"
+                        name="principleAmount"
+                        value={clientObject.principleAmount}
+                        onChange={handleInput}
+                        required
+                    />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="rateOfInterest">Rate of interest</label>
+                    <input
+                        type="text"
+                        name="rateOfInterest"
+                        value={clientObject.rateOfInterest}
+                        onChange={handleInput}
+                        required
+                    />
+                </div>
+                <button type="button" className="submit-button" onClick={handleClick}>
+                    Add client
+                </button>
+                {errorMessage && <p className='errorMessage'>{errorMessage}</p>}
+            </form>
+        </div>
+    )
 }
 
-export default Form;
-
+export default Form
 
 
